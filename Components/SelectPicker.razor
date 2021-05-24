@@ -1,0 +1,32 @@
+@inherits SelectPickerBase<TItem>
+@typeparam TItem
+
+<select id="@Id" data-live-search="true" @attributes=Attributes>
+    @foreach (var (i, item) in Enumerable.Range(0, Items.Count).Zip(Items))
+    {
+        <option value="@i">
+            @OptionTemplate(item)
+        </option>
+    }
+</select>
+
+@code {
+    [Parameter]
+    public TItem Value { get; set; }
+
+    [Parameter]
+    public EventCallback<TItem> ValueChanged { get; set; }
+
+    private TItem SelectedValue
+    {
+        get => Value;
+        set => ValueChanged.InvokeAsync(value);
+    }
+
+    [JSInvokable]
+    public override void OnSelectedValue(JsonElement val)
+    {
+        SelectedValue = Items[int.Parse(val.GetString())];
+        StateHasChanged();
+    }
+}
