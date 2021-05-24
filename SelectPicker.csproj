@@ -5,7 +5,7 @@
     <PackageId>SelectPickerBlazor</PackageId>
     <Version>0.1.0</Version>
     <Authors>Edouard Berthe</Authors>
-    <Company></Company>
+    <RepositoryUrl>https://github.com/edouardberthe/select-picker-blazor</RepositoryUrl>
 
   </PropertyGroup>
 
