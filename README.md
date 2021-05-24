@@ -31,7 +31,7 @@ and Javascript:
 A good practice is to have CDN-based URLs for Production, but having the non-minified assets in Development mode (for debugging purposes + for being able to develop offline).
 
 CSS:
-```
+```html
 <environment include="Development">
     <link href="css/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-select-1.13.18/bootstrap-select.min.css" rel="stylesheet">
@@ -42,7 +42,7 @@ CSS:
 </environment>
 ```
 and Javascript:
-```
+```html
 <environment include="Development">
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/bootstrap-4.6.0/bootstrap.bundle.min.js"></script>
